@@ -1,0 +1,401 @@
+/* ============================================================
+   get-involved.css
+   Extends base.css + style.css with the components the Get
+   Involved page needs that the rest of the site didn't yet:
+   quick-jump pills, tap-target radio cards, textareas, file
+   upload, and per-section status chips. Every color, spacing,
+   and radius value below is one of style.css's existing tokens
+   — nothing new is introduced to the palette.
+   ============================================================ */
+
+/* ---------- Mini hero / quick nav ---------- */
+.giv-hero {
+  background: linear-gradient(160deg, var(--color-navy) 0%, var(--color-navy-deep) 100%);
+  color: var(--color-cream);
+  padding-block: clamp(var(--space-16), 8vw, var(--space-24)) var(--space-10);
+}
+.giv-hero .section-eyebrow {
+  color: var(--color-gold);
+}
+.giv-hero-title {
+  font-family: var(--font-display);
+  font-size: var(--text-hero);
+  font-weight: 700;
+  line-height: 1.02;
+  margin-bottom: var(--space-5);
+  max-width: 16ch;
+}
+.giv-hero-lead {
+  font-size: var(--text-lg);
+  color: oklch(from var(--color-cream) l c h / 0.82);
+  max-width: 58ch;
+  margin-bottom: var(--space-3);
+}
+.giv-hero-dates {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  background: oklch(from var(--color-gold) l c h / 0.12);
+  border: 1px solid oklch(from var(--color-gold) l c h / 0.35);
+  border-radius: var(--radius-full);
+  padding: var(--space-2) var(--space-5);
+  margin-block: var(--space-5) var(--space-8);
+}
+
+.giv-jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+.giv-jump a {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: oklch(from var(--color-cream) l c h / 0.85);
+  text-decoration: none;
+  border: 1px solid oklch(from var(--color-cream) l c h / 0.28);
+  border-radius: var(--radius-full);
+  padding: var(--space-2) var(--space-4);
+  white-space: nowrap;
+}
+.giv-jump a:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
+/* ---------- Section chrome ---------- */
+.giv-section {
+  border-top: 1px solid var(--color-divider);
+}
+.giv-section--dark {
+  background: linear-gradient(160deg, var(--color-navy) 0%, var(--color-navy-deep) 100%);
+  color: var(--color-cream);
+  border-top-color: transparent;
+}
+.giv-section--dark .section-eyebrow {
+  color: var(--color-gold);
+}
+.giv-section--dark .section-title {
+  color: var(--color-cream);
+}
+.giv-section--dark .section-lead {
+  color: oklch(from var(--color-cream) l c h / 0.78);
+}
+.giv-section--dark .field label {
+  color: oklch(from var(--color-cream) l c h / 0.7);
+}
+
+.giv-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--color-gold-ink);
+  background: var(--color-gold-highlight);
+  border-radius: var(--radius-full);
+  padding: var(--space-1) var(--space-4);
+  margin-bottom: var(--space-5);
+}
+[data-theme='dark'] .giv-badge {
+  color: var(--color-gold);
+  background: oklch(from var(--color-gold) l c h / 0.14);
+}
+
+.giv-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: var(--space-16);
+  align-items: flex-start;
+}
+@media (max-width: 900px) {
+  .giv-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Textarea (style.css only ever styled text/email/tel) ---------- */
+.field textarea {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  font-size: var(--text-base);
+  font-family: inherit;
+  min-height: 110px;
+  resize: vertical;
+}
+.field textarea:focus-visible {
+  border-color: var(--color-navy);
+}
+.field.has-error textarea {
+  border-color: var(--color-error);
+}
+.field-hint {
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+  margin-top: var(--space-2);
+}
+
+/* ---------- Radio-style tap targets (engagement picker, recognition, preferred day) ---------- */
+.tap-grid {
+  display: grid;
+  gap: var(--space-3);
+}
+.tap-grid--2col {
+  grid-template-columns: 1fr 1fr;
+}
+@media (max-width: 560px) {
+  .tap-grid--2col {
+    grid-template-columns: 1fr;
+  }
+}
+.tap-option {
+  position: relative;
+  display: block;
+}
+.tap-option input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+.tap-option span {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-5);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text);
+  cursor: pointer;
+  transition:
+    border-color var(--transition-interactive),
+    background var(--transition-interactive);
+}
+.tap-option span::before {
+  content: '';
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  border-radius: var(--radius-full);
+  border: 1.5px solid var(--color-border);
+  background: var(--color-surface);
+}
+.tap-option input:checked + span {
+  border-color: var(--color-gold);
+  background: var(--color-gold-highlight);
+}
+.tap-option input:checked + span::before {
+  border-color: var(--color-gold);
+  border-width: 5px;
+}
+.tap-option input:focus-visible + span {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+.giv-section--dark .tap-option span {
+  background: oklch(from var(--color-cream) l c h / 0.06);
+  border-color: oklch(from var(--color-cream) l c h / 0.25);
+  color: var(--color-cream);
+}
+.giv-section--dark .tap-option input:checked + span {
+  background: oklch(from var(--color-gold) l c h / 0.16);
+  border-color: var(--color-gold);
+}
+.group-error {
+  display: none;
+  color: var(--color-error);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  margin-top: var(--space-2);
+}
+.interest-group.has-error .group-error {
+  display: block;
+}
+.interest-group.has-error .tap-option span {
+  border-color: var(--color-error);
+}
+
+/* ---------- Progressive reveal panel (volunteer follow-up + contact fields) ---------- */
+.reveal-panel {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition:
+    max-height 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.35s ease;
+}
+.reveal-panel.is-open {
+  max-height: 2200px;
+  opacity: 1;
+  margin-top: var(--space-8);
+}
+
+/* ---------- File / photo upload ---------- */
+.photo-drop {
+  border: 1.5px dashed var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  text-align: center;
+  cursor: pointer;
+  background: var(--color-surface);
+}
+.photo-drop:hover {
+  border-color: var(--color-gold);
+}
+.photo-drop input {
+  display: none;
+}
+.photo-drop-label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+.photo-preview {
+  display: none;
+  margin-top: var(--space-4);
+  align-items: center;
+  gap: var(--space-3);
+}
+.photo-preview.is-visible {
+  display: flex;
+}
+.photo-preview img {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+}
+.photo-preview button {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  color: var(--color-error);
+  text-decoration: underline;
+}
+
+/* ---------- Checkbox as a single confirm line (permission / consent) ---------- */
+.consent-line {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  padding: var(--space-4);
+  background: var(--color-surface-offset);
+  border-radius: var(--radius-md);
+}
+.giv-section--dark .consent-line {
+  background: oklch(from var(--color-cream) l c h / 0.06);
+  color: oklch(from var(--color-cream) l c h / 0.85);
+}
+.consent-line input {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  accent-color: var(--color-gold);
+  flex-shrink: 0;
+}
+
+/* ---------- Submit-state feedback ---------- */
+.field-submit-error {
+  grid-column: 1 / -1;
+  display: none;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-error);
+  background: var(--color-error-highlight);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+}
+.field-submit-error.is-visible {
+  display: flex;
+}
+.btn[disabled] {
+  opacity: 0.6;
+  cursor: default;
+}
+
+/* ---------- Share section ---------- */
+.share-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-3);
+  margin-top: var(--space-8);
+}
+@media (max-width: 700px) {
+  .share-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.share-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-6) var(--space-4);
+  border: 1.5px solid oklch(from var(--color-cream) l c h / 0.25);
+  border-radius: var(--radius-lg);
+  color: var(--color-cream);
+  background: oklch(from var(--color-cream) l c h / 0.05);
+  text-decoration: none;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+.share-tile:hover {
+  border-color: var(--color-gold);
+  background: oklch(from var(--color-gold) l c h / 0.14);
+  color: var(--color-gold);
+}
+.share-tile svg {
+  width: 22px;
+  height: 22px;
+}
+.share-copy-note {
+  font-size: var(--text-xs);
+  color: var(--color-gold);
+  margin-top: var(--space-3);
+  min-height: 1.2em;
+}
+
+/* ---------- Section-picker on the We Can Do This card (photo optional label) ---------- */
+.optional-tag {
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--color-text-faint);
+}
+
+/* ---------- Banner graphics between sections ---------- */
+.giv-banner-wrap {
+  padding-block: var(--space-10);
+  background: var(--color-bg);
+}
+.giv-banner {
+  margin-inline: auto;
+  max-width: 560px;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--color-border);
+}
+.giv-banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
