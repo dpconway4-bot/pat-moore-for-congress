@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Photo and Video Consent | Pat Moore for Congress</title>
+<meta name="description" content="Give Pat Moore for Congress permission to use your photo, video, and words." />
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+<link rel="stylesheet" href="./base.css" />
+<link rel="stylesheet" href="./style.css" />
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+<style>
+  body { background: var(--color-bg); }
+  .pc-top {
+    background: var(--color-navy);
+    color: var(--color-cream);
+    padding: calc(env(safe-area-inset-top, 0px) + 1.75rem) 1.25rem 2.25rem;
+  }
+  .pc-top a { color: inherit; text-decoration: none; font-weight: 600; font-size: .9375rem; opacity: .85; }
+  .pc-top h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 1.5rem + 3vw, 3rem);
+    line-height: 1.08;
+    margin-top: 1.25rem;
+    max-width: 14ch;
+  }
+  .pc-top p { margin-top: .75rem; max-width: 34ch; color: #d9dfea; }
+  .pc-wrap { max-width: 34rem; margin: 0 auto; }
+  form, .pc-done { padding: 1.5rem 1.25rem calc(env(safe-area-inset-bottom, 0px) + 2.5rem); }
+  fieldset { border: 0; padding: 0; margin: 0 0 1.75rem; }
+  legend, .pc-label { display: block; font-weight: 700; font-size: 1.0625rem; margin-bottom: .5rem; color: var(--color-text); }
+  .pc-hint { font-size: .9375rem; color: var(--color-text-muted); margin: -.25rem 0 .75rem; }
+  .pc-field { margin-bottom: 1rem; }
+  .pc-field label { display: block; font-weight: 600; font-size: .9375rem; margin-bottom: .375rem; }
+  .pc-opt { font-weight: 400; color: var(--color-text-muted); }
+  input[type=text], input[type=email], input[type=tel], input[type=number] {
+    width: 100%;
+    min-height: 3.25rem;
+    padding: .75rem .9rem;
+    font-size: 1.0625rem; /* 17px+ stops iOS zoom-on-focus */
+    background: var(--color-surface);
+    border: 1.5px solid var(--color-border);
+    border-radius: var(--radius-md);
+  }
+  input:focus-visible, .pc-choice:focus-within, button:focus-visible, summary:focus-visible {
+    outline: 3px solid var(--color-gold);
+    outline-offset: 2px;
+  }
+  .pc-row { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
+  .pc-choice {
+    display: flex; gap: .75rem; align-items: flex-start;
+    padding: .9rem 1rem; margin-bottom: .5rem;
+    background: var(--color-surface);
+    border: 1.5px solid var(--color-border);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+  }
+  .pc-choice:has(input:checked) { border-color: var(--color-navy); background: var(--color-primary-highlight); }
+  .pc-choice input { width: 1.375rem; height: 1.375rem; margin-top: .1rem; flex: none; accent-color: var(--color-navy); }
+  .pc-choice strong { display: block; }
+  .pc-choice span span { display: block; font-size: .9375rem; color: var(--color-text-muted); }
+  .pc-sub { margin: .25rem 0 1rem; padding-left: 1rem; border-left: 3px solid var(--color-gold); }
+  .pc-terms {
+    background: var(--color-surface-2);
+    border-radius: var(--radius-md);
+    padding: 1rem 1.1rem;
+    font-size: .9375rem;
+  }
+  .pc-terms ul { padding-left: 1.1rem; }
+  .pc-terms li + li { margin-top: .35rem; }
+  .pc-terms p + ul, .pc-terms ul + p, .pc-terms p + p { margin-top: .6rem; }
+  details { margin-top: .75rem; }
+  summary { cursor: pointer; font-weight: 600; color: var(--color-navy); padding: .25rem 0; }
+  details[open] summary { margin-bottom: .5rem; }
+  .pc-sig {
+    font-family: var(--font-display);
+    font-size: 1.375rem !important;
+    border-width: 0 0 2px !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+  }
+  .pc-btn {
+    width: 100%; min-height: 3.5rem;
+    background: var(--color-navy); color: var(--color-cream);
+    border: 0; border-radius: var(--radius-full);
+    font-weight: 700; font-size: 1.125rem; cursor: pointer;
+  }
+  .pc-btn:disabled { opacity: .6; cursor: progress; }
+  .pc-btn--ghost { background: transparent; color: var(--color-navy); border: 2px solid var(--color-navy); margin-top: .75rem; }
+  .pc-error { color: var(--color-error); background: var(--color-error-highlight); padding: .75rem 1rem; border-radius: var(--radius-md); margin-bottom: 1rem; font-weight: 600; }
+  .pc-done h2 { font-family: var(--font-display); font-size: 2rem; }
+  .pc-done p { margin: .75rem 0 1.5rem; }
+  .pc-foot { font-size: .8125rem; color: var(--color-text-muted); text-align: center; margin-top: 1.5rem; }
+  .pc-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+
+<header class="pc-top">
+  <div class="pc-wrap">
+    <a href="/">Pat Moore for Congress</a>
+    <h1>Photo and video consent</h1>
+    <p>Takes about a minute. It lets us share your photo, video, or words with your permission.</p>
+  </div>
+</header>
+
+<main id="main" class="pc-wrap">
+  <form id="pc-form" novalidate>
+    <div class="pc-error" id="pc-error" role="alert" hidden></div>
+
+    <fieldset>
+      <legend>Who's signing?</legend>
+      <label class="pc-choice">
+        <input type="radio" name="signer_type" value="self" checked />
+        <span><strong>Myself</strong><span>I'm 18 or older</span></span>
+      </label>
+      <label class="pc-choice">
+        <input type="radio" name="signer_type" value="guardian" />
+        <span><strong>My child</strong><span>I'm the parent or guardian of someone under 18</span></span>
+      </label>
+      <div class="pc-sub" id="minor-fields" hidden>
+        <div class="pc-row">
+          <div class="pc-field">
+            <label for="minor_first_name">Child's first name</label>
+            <input type="text" id="minor_first_name" name="minor_first_name" autocomplete="off" />
+          </div>
+          <div class="pc-field">
+            <label for="minor_age">Age</label>
+            <input type="number" id="minor_age" name="minor_age" inputmode="numeric" min="0" max="17" />
+          </div>
+        </div>
+        <div class="pc-field">
+          <label for="relationship">Your relationship to the child</label>
+          <input type="text" id="relationship" name="relationship" placeholder="Parent, grandparent, legal guardian" />
+        </div>
+        <p class="pc-hint">For anyone under 18 we use first name only, never tag them, and never share their school or address.</p>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend id="about-legend">About you</legend>
+      <div class="pc-field">
+        <label for="full_name">Full name</label>
+        <input type="text" id="full_name" name="full_name" autocomplete="name" required />
+      </div>
+      <div class="pc-field">
+        <label for="phone">Mobile phone</label>
+        <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" />
+      </div>
+      <div class="pc-field">
+        <label for="email">Email <span class="pc-opt">(phone or email required)</span></label>
+        <input type="email" id="email" name="email" autocomplete="email" inputmode="email" />
+      </div>
+      <div class="pc-field">
+        <label for="city_parish">City and parish</label>
+        <input type="text" id="city_parish" name="city_parish" autocomplete="address-level2" placeholder="Monroe, Ouachita" required />
+      </div>
+      <div class="pc-field">
+        <label for="event">Event or place <span class="pc-opt">(optional)</span></label>
+        <input type="text" id="event" name="event" />
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>What you're agreeing to</legend>
+      <div class="pc-terms">
+        <p id="terms-lead">When you tap I agree, you give Pat Moore for Congress, its staff, volunteers, and vendors permission to:</p>
+        <ul>
+          <li>Photograph you and record video and audio of you.</li>
+          <li>Use your name, image, voice, and words in any campaign media: the website, social media, email, texts, mail, flyers and other printed pieces, digital, TV, and radio ads, and material for the press.</li>
+          <li>Crop, edit, and caption it. We will never change what you meant or put words in your mouth.</li>
+        </ul>
+        <p>No one is paid for this. Appearing in our photos or video doesn't make you an endorser; we only call someone an endorser when they tell us they are.</p>
+        <p>Change your mind anytime: email <a href="mailto:info@patmooreforcongress.com">info@patmooreforcongress.com</a>. We stop new uses within 5 business days. Anything already printed, mailed, aired, or posted can't be recalled.</p>
+      </div>
+    </fieldset>
+
+    <div class="pc-hp" aria-hidden="true">
+      <label for="website">Leave blank</label>
+      <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+    </div>
+
+    <button type="submit" class="pc-btn" id="pc-submit">I agree</button>
+    <p class="pc-foot">Paid for by PAT MOORE FOR CONGRESS</p>
+  </form>
+
+  <section class="pc-done" id="pc-done" hidden aria-live="polite">
+    <h2 id="done-title">Signed. Thank you.</h2>
+    <p>Your consent is on file with the campaign. To change it later, email <a href="mailto:info@patmooreforcongress.com">info@patmooreforcongress.com</a>.</p>
+    <button type="button" class="pc-btn" id="pc-next">Sign up the next person</button>
+    <a class="pc-btn pc-btn--ghost" href="/" style="display:flex;align-items:center;justify-content:center;text-decoration:none">Visit the campaign site</a>
+    <p class="pc-foot">Paid for by PAT MOORE FOR CONGRESS</p>
+  </section>
+</main>
+
+<script>
+(function () {
+  var CONSENT_VERSION = 'v2-2026-11-06';
+  var form = document.getElementById('pc-form');
+  var errBox = document.getElementById('pc-error');
+  var params = new URLSearchParams(location.search);
+  var source = params.get('src') || document.referrer || 'direct';
+
+  // ?event=Ruston%20forum prefills the event box (one link per event)
+  if (params.get('event')) form.event.value = params.get('event');
+
+  function sync() {
+    var guardian = form.signer_type.value === 'guardian';
+    document.getElementById('minor-fields').hidden = !guardian;
+    document.getElementById('about-legend').textContent = guardian ? 'About you (the parent or guardian)' : 'About you';
+    document.getElementById('terms-lead').textContent = guardian
+      ? 'When you tap I agree, you confirm you are the parent or legal guardian and give Pat Moore for Congress, its staff, volunteers, and vendors permission, on your child\'s behalf, to:'
+      : 'When you tap I agree, you confirm you are 18 or older and give Pat Moore for Congress, its staff, volunteers, and vendors permission to:';
+  }
+  form.addEventListener('change', sync);
+  sync();
+
+  function fail(msg, el) {
+    errBox.textContent = msg;
+    errBox.hidden = false;
+    (el || errBox).focus();
+    errBox.scrollIntoView({ block: 'center' });
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    errBox.hidden = true;
+    var f = form;
+    var guardian = f.signer_type.value === 'guardian';
+
+    if (guardian && !f.minor_first_name.value.trim()) return fail("Add your child's first name.", f.minor_first_name);
+    if (guardian && !f.relationship.value.trim()) return fail('Add your relationship to the child.', f.relationship);
+    if (!f.full_name.value.trim()) return fail('Add your full name.', f.full_name);
+    if (!f.phone.value.trim() && !f.email.value.trim()) return fail('Add a phone number or an email so we can reach you.', f.phone);
+    if (f.email.value.trim() && !/^\S+@\S+\.\S+$/.test(f.email.value.trim())) return fail('Check the email address.', f.email);
+    if (!f.city_parish.value.trim()) return fail('Add your city and parish.', f.city_parish);
+
+    var data = {
+      signer_type: guardian ? 'Parent or guardian' : 'Self',
+      minor_first_name: guardian ? f.minor_first_name.value.trim() : '',
+      minor_age: guardian ? f.minor_age.value.trim() : '',
+      relationship: guardian ? f.relationship.value.trim() : '',
+      full_name: f.full_name.value.trim(),
+      phone: f.phone.value.trim(),
+      email: f.email.value.trim(),
+      city_parish: f.city_parish.value.trim(),
+      event: f.event.value.trim(),
+      agree: 'yes',
+      consent_version: CONSENT_VERSION,
+      source: source,
+      website: f.website.value
+    };
+
+    var btn = document.getElementById('pc-submit');
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+
+    fetch('/api/photo-consent', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    })
+      .then(function (r) { return r.json().catch(function () { return { ok: false }; }); })
+      .then(function (res) {
+        if (!res.ok) throw new Error(res.error || 'Not saved.');
+        var first = data.full_name.split(/\s+/)[0];
+        document.getElementById('done-title').textContent = 'Signed. Thank you, ' + first + '.';
+        form.hidden = true;
+        document.getElementById('pc-done').hidden = false;
+        window.scrollTo(0, 0);
+        if (window.va) window.va('event', { name: 'photo_consent_signed' });
+      })
+      .catch(function () {
+        fail("Your consent didn't save. Check your connection and tap I agree again.");
+      })
+      .finally(function () {
+        btn.disabled = false;
+        btn.textContent = 'I agree';
+      });
+  });
+
+  // Event mode: hand the phone to the next person with the event kept
+  document.getElementById('pc-next').addEventListener('click', function () {
+    var keepEvent = form.event.value;
+    form.reset();
+    form.event.value = keepEvent;
+    sync();
+    document.getElementById('pc-done').hidden = true;
+    form.hidden = false;
+    window.scrollTo(0, 0);
+    form.full_name.focus();
+  });
+})();
+</script>
+</body>
+</html>

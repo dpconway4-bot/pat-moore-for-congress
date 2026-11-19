@@ -1,0 +1,8 @@
+{
+  "redirects": [
+    { "source": "/consent", "destination": "/photo-consent.html", "permanent": false },
+    { "source": "/photo-consent", "destination": "/photo-consent.html", "permanent": false },
+    { "source": "/privacy", "destination": "/privacy.html", "permanent": false },
+    { "source": "/privacy-policy", "destination": "/privacy.html", "permanent": false }
+  ]
+}
