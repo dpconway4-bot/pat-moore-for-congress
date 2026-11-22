@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Moore for Women Brunch | Pat Moore for Congress</title>
+<meta name="description" content="Sign in at the Moore for Women Brunch with Pat Moore." />
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+<link rel="stylesheet" href="/base.css" />
+<link rel="stylesheet" href="/style.css" />
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+<style>
+  body { background: var(--color-bg); }
+  .pc-top {
+    background: var(--color-navy);
+    color: var(--color-cream);
+    padding: calc(env(safe-area-inset-top, 0px) + 1.75rem) 1.25rem 2.25rem;
+  }
+  .pc-top a { color: inherit; text-decoration: none; font-weight: 600; font-size: .9375rem; opacity: .85; }
+  .pc-top h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 1.5rem + 3vw, 3rem);
+    line-height: 1.08;
+    margin-top: 1.25rem;
+    max-width: 14ch;
+  }
+  .pc-top p { margin-top: .75rem; max-width: 34ch; color: #d9dfea; }
+  .pc-wrap { max-width: 34rem; margin: 0 auto; }
+  form, .pc-done { padding: 1.5rem 1.25rem calc(env(safe-area-inset-bottom, 0px) + 2.5rem); }
+  fieldset { border: 0; padding: 0; margin: 0 0 1.75rem; }
+  legend, .pc-label { display: block; font-weight: 700; font-size: 1.0625rem; margin-bottom: .5rem; color: var(--color-text); }
+  .pc-hint { font-size: .9375rem; color: var(--color-text-muted); margin: -.25rem 0 .75rem; }
+  .pc-field { margin-bottom: 1rem; }
+  .pc-field label { display: block; font-weight: 600; font-size: .9375rem; margin-bottom: .375rem; }
+  .pc-opt { font-weight: 400; color: var(--color-text-muted); }
+  input[type=text], input[type=email], input[type=tel], input[type=number] {
+    width: 100%;
+    min-height: 3.25rem;
+    padding: .75rem .9rem;
+    font-size: 1.0625rem; /* 17px+ stops iOS zoom-on-focus */
+    background: var(--color-surface);
+    border: 1.5px solid var(--color-border);
+    border-radius: var(--radius-md);
+  }
+  input:focus-visible, .pc-choice:focus-within, button:focus-visible, summary:focus-visible {
+    outline: 3px solid var(--color-gold);
+    outline-offset: 2px;
+  }
+  .pc-row { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
+  .pc-choice {
+    display: flex; gap: .75rem; align-items: flex-start;
+    padding: .9rem 1rem; margin-bottom: .5rem;
+    background: var(--color-surface);
+    border: 1.5px solid var(--color-border);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+  }
+  .pc-choice:has(input:checked) { border-color: var(--color-navy); background: var(--color-primary-highlight); }
+  .pc-choice input { width: 1.375rem; height: 1.375rem; margin-top: .1rem; flex: none; accent-color: var(--color-navy); }
+  .pc-choice strong { display: block; }
+  .pc-choice span span { display: block; font-size: .9375rem; color: var(--color-text-muted); }
+  .pc-sub { margin: .25rem 0 1rem; padding-left: 1rem; border-left: 3px solid var(--color-gold); }
+  .pc-terms {
+    background: var(--color-surface-2);
+    border-radius: var(--radius-md);
+    padding: 1rem 1.1rem;
+    font-size: .9375rem;
+  }
+  .pc-terms ul { padding-left: 1.1rem; }
+  .pc-terms li + li { margin-top: .35rem; }
+  .pc-terms p + ul, .pc-terms ul + p, .pc-terms p + p { margin-top: .6rem; }
+  details { margin-top: .75rem; }
+  summary { cursor: pointer; font-weight: 600; color: var(--color-navy); padding: .25rem 0; }
+  details[open] summary { margin-bottom: .5rem; }
+  .pc-sig {
+    font-family: var(--font-display);
+    font-size: 1.375rem !important;
+    border-width: 0 0 2px !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+  }
+  .pc-btn {
+    width: 100%; min-height: 3.5rem;
+    background: var(--color-navy); color: var(--color-cream);
+    border: 0; border-radius: var(--radius-full);
+    font-weight: 700; font-size: 1.125rem; cursor: pointer;
+  }
+  .pc-btn:disabled { opacity: .6; cursor: progress; }
+  .pc-btn--ghost { background: transparent; color: var(--color-navy); border: 2px solid var(--color-navy); margin-top: .75rem; }
+  .pc-error { color: var(--color-error); background: var(--color-error-highlight); padding: .75rem 1rem; border-radius: var(--radius-md); margin-bottom: 1rem; font-weight: 600; }
+  .pc-done h2 { font-family: var(--font-display); font-size: 2rem; }
+  .pc-done p { margin: .75rem 0 1.5rem; }
+  .pc-foot { font-size: .8125rem; color: var(--color-text-muted); text-align: center; margin-top: 1.5rem; }
+  .pc-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  [hidden] { display: none !important; }
+
+  .pc-kicker { display:inline-block; margin-top:1.25rem; font-weight:700; font-size:.8125rem; letter-spacing:.08em; text-transform:uppercase; color: var(--color-gold); }
+  .pc-top h1 { margin-top: .35rem; }
+</style>
+</head>
+<body>
+<header class="pc-top">
+  <div class="pc-wrap">
+    <a href="/">Pat Moore for Congress</a>
+    <span class="pc-kicker" id="event-date">Sunday, November 22</span>
+    <h1>Moore for Women Brunch</h1>
+    <p>Welcome, and thank you for being here. Sign in so Pat and the team can stay in touch.</p>
+  </div>
+</header>
+<main id="main" class="pc-wrap">
+  <form id="pc-form" novalidate>
+    <div class="pc-error" id="pc-error" role="alert" hidden></div>
+    <fieldset>
+      <legend>Sign in</legend>
+      <div class="pc-row">
+        <div class="pc-field">
+          <label for="first_name">First name</label>
+          <input type="text" id="first_name" name="first_name" autocomplete="given-name" required />
+        </div>
+        <div class="pc-field">
+          <label for="last_name">Last name</label>
+          <input type="text" id="last_name" name="last_name" autocomplete="family-name" required />
+        </div>
+      </div>
+      <div class="pc-field">
+        <label for="phone">Phone number</label>
+        <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" required />
+      </div>
+      <div class="pc-field">
+        <label for="address">Address <span class="pc-opt">(optional)</span></label>
+        <input type="text" id="address" name="address" autocomplete="street-address" placeholder="Street, city, zip" />
+      </div>
+    </fieldset>
+    <fieldset>
+      <label class="pc-choice">
+        <input type="checkbox" id="sms_consent" name="sms_consent" value="yes" />
+        <span><strong>Text me campaign updates <span class="pc-opt">(optional)</span></strong><span id="consent-text">By providing your telephone number and checking this box, you consent to receive text messages. Msg &amp; data rates may apply. Msg frequency may vary. Messaging may include requests for donation. Reply &quot;STOP&quot; to opt-out &amp; &quot;HELP&quot; for help.</span></span>
+      </label>
+      <p class="pc-hint" style="margin-top:.5rem">See our <a href="/privacy">privacy policy</a>.</p>
+    </fieldset>
+    <div class="pc-hp" aria-hidden="true">
+      <label for="website">Leave blank</label>
+      <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+    </div>
+    <button type="submit" class="pc-btn" id="pc-submit">Sign in</button>
+    <p class="pc-foot">Paid for by PAT MOORE FOR CONGRESS</p>
+  </form>
+  <section class="pc-done" id="pc-done" hidden aria-live="polite">
+    <h2 id="done-title">You're signed in. Thank you.</h2>
+    <p>Enjoy the brunch. We're glad you're here.</p>
+    <button type="button" class="pc-btn" id="pc-next">Sign in the next guest</button>
+    <a class="pc-btn pc-btn--ghost" href="/" style="display:flex;align-items:center;justify-content:center;text-decoration:none">Visit the campaign site</a>
+    <p class="pc-foot">Paid for by PAT MOORE FOR CONGRESS</p>
+  </section>
+</main>
+<script>
+(function () {
+  var EVENT_NAME = 'Moore for Women Brunch, Nov 22, 2026';
+  var CONSENT_VERSION = 'sms-v1-2026-11-19';
+  var form = document.getElementById('pc-form');
+  var errBox = document.getElementById('pc-error');
+  var params = new URLSearchParams(location.search);
+  var source = params.get('src') || document.referrer || 'direct';
+  // ?event=... lets the same page log a future brunch under its own name
+  var eventName = params.get('event') || EVENT_NAME;
+  if (params.get('event')) document.getElementById('event-date').textContent = params.get('event');
+  function fail(msg, el) {
+    errBox.textContent = msg;
+    errBox.hidden = false;
+    (el || errBox).focus();
+    errBox.scrollIntoView({ block: 'center' });
+  }
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    errBox.hidden = true;
+    var f = form;
+    if (!f.first_name.value.trim()) return fail('Add your first name.', f.first_name);
+    if (!f.last_name.value.trim()) return fail('Add your last name.', f.last_name);
+    if (f.phone.value.replace(/\D/g, '').length < 10) return fail('Add a phone number with area code.', f.phone);
+    var data = {
+      event: eventName,
+      first_name: f.first_name.value.trim(),
+      last_name: f.last_name.value.trim(),
+      phone: f.phone.value.trim(),
+      address: f.address.value.trim(),
+      sms_consent: f.sms_consent.checked ? 'yes' : 'no',
+      consent_text: f.sms_consent.checked ? document.getElementById('consent-text').textContent : '',
+      consent_version: CONSENT_VERSION,
+      source: source,
+      website: f.website.value
+    };
+    var btn = document.getElementById('pc-submit');
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    fetch('/api/brunch', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    })
+      .then(function (r) { return r.json().catch(function () { return { ok: false }; }); })
+      .then(function (res) {
+        if (!res.ok) throw new Error(res.error || 'Not saved.');
+        var first = data.first_name;
+        document.getElementById('done-title').textContent = "You're signed in. Thank you, " + first + '.';
+        form.hidden = true;
+        document.getElementById('pc-done').hidden = false;
+        window.scrollTo(0, 0);
+        if (window.va) window.va('event', { name: 'brunch_sign_in' });
+      })
+      .catch(function () {
+        fail("That didn't save. Check your connection and tap Sign in again.");
+      })
+      .finally(function () {
+        btn.disabled = false;
+        btn.textContent = 'Sign in';
+      });
+  });
+  // Sign-in table mode: clear the form for the next guest
+  document.getElementById('pc-next').addEventListener('click', function () {
+    form.reset();
+    document.getElementById('pc-done').hidden = true;
+    form.hidden = false;
+    window.scrollTo(0, 0);
+    form.first_name.focus();
+  });
+})();
+</script>
+</body>
+</html>
