@@ -1,8 +1,39 @@
 {
   "redirects": [
-    { "source": "/consent", "destination": "/photo-consent.html", "permanent": false },
-    { "source": "/photo-consent", "destination": "/photo-consent.html", "permanent": false },
-    { "source": "/privacy", "destination": "/privacy.html", "permanent": false },
-    { "source": "/privacy-policy", "destination": "/privacy.html", "permanent": false }
+    {
+      "source": "/consent",
+      "destination": "/photo-consent.html",
+      "permanent": false
+    },
+    {
+      "source": "/photo-consent",
+      "destination": "/photo-consent.html",
+      "permanent": false
+    },
+    {
+      "source": "/privacy",
+      "destination": "/privacy.html",
+      "permanent": false
+    },
+    {
+      "source": "/privacy-policy",
+      "destination": "/privacy.html",
+      "permanent": false
+    }
+  ],
+  "headers": [
+    {
+      "source": "/fast-family-plan-card.pdf",
+      "headers": [
+        {
+          "key": "Content-Disposition",
+          "value": "attachment; filename=\"Pat-Moore-Family-Plan-Card.pdf\""
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/pdf"
+        }
+      ]
+    }
   ]
 }
