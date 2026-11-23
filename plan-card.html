@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Our Family Plan to Vote | Pat Moore for Congress</title>
+<meta name="description" content="Make your family's plan to vote in the December 12 runoff. Fill it in on your phone, share it with your family, and check off every vote.">
+<meta property="og:title" content="Our Family Plan to Vote | Pat Moore for Congress">
+<meta property="og:description" content="Who's voting, which day, and who's driving. Make your family's plan for the December 12 runoff.">
+<meta name="color-scheme" content="light">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Public+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="./base.css">
+<link rel="stylesheet" href="./style.css">
+<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)}</script>
+<script defer src="/_vercel/insights/script.js"></script>
+<style>
+.pc{--w:680px;background:var(--color-bg);color:var(--color-text)}
+.pc-top{background:var(--color-navy);color:var(--color-cream);padding:var(--space-6) var(--space-5) var(--space-10)}
+.pc-top a.home{color:var(--color-cream);opacity:.8;font-size:var(--text-sm);text-decoration:none}
+.pc-top a.home:hover{opacity:1;text-decoration:underline}
+.pc-wrap{max-width:var(--w);margin:0 auto}
+.pc-top h1{font-family:var(--font-display);font-size:clamp(2.1rem,1.5rem + 3vw,3.2rem);line-height:1.05;margin-top:var(--space-6)}
+.pc-top .sub{font-family:var(--font-display);font-style:italic;color:var(--color-gold-highlight);font-size:var(--text-lg);margin-top:var(--space-2)}
+.pc-top .how{margin-top:var(--space-5);color:oklch(from var(--color-cream) l c h / .85);max-width:52ch}
+.privacy{display:flex;gap:var(--space-2);align-items:flex-start;margin-top:var(--space-4);font-size:var(--text-sm);color:oklch(from var(--color-cream) l c h / .75)}
+.privacy svg{flex:none;margin-top:3px}
+main.pc-main{padding:0 var(--space-5) var(--space-16)}
+.card{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-6) var(--space-5);margin-top:var(--space-6)}
+.card:first-child{margin-top:calc(-1 * var(--space-6))}
+.card h2{font-family:var(--font-display);font-size:var(--text-xl);color:var(--color-navy);margin-bottom:var(--space-1)}
+.card .hint{color:var(--color-text-muted);font-size:var(--text-sm);margin-bottom:var(--space-4)}
+.f{display:block;margin-top:var(--space-4)}
+.f span{display:block;font-size:var(--text-sm);font-weight:700;color:var(--color-navy);margin-bottom:var(--space-1)}
+.f input[type=text]{width:100%;font-size:16px;padding:.7rem .85rem;border:1.5px solid var(--color-border);border-radius:var(--radius-md);background:var(--color-bg)}
+.f input[type=text]:focus{border-color:var(--color-gold);outline:none;box-shadow:0 0 0 3px oklch(from var(--color-gold) l c h / .25)}
+.grid2{display:grid;gap:0 var(--space-4)}
+@media (min-width:560px){.grid2{grid-template-columns:1fr 1fr}}
+.person{border-top:1px solid var(--color-divider);padding-top:var(--space-5);margin-top:var(--space-5)}
+.person:first-of-type{border-top:none;padding-top:0;margin-top:0}
+.p-head{display:flex;justify-content:space-between;align-items:center;gap:var(--space-3)}
+.p-head .f{flex:1;margin-top:0}
+.voted{display:flex;align-items:center;gap:var(--space-2);font-weight:700;font-size:var(--text-sm);color:var(--color-navy);padding:.55rem .8rem;border:1.5px solid var(--color-border);border-radius:var(--radius-full);cursor:pointer;margin-top:1.45rem;white-space:nowrap}
+.voted input{width:20px;height:20px;accent-color:var(--color-success)}
+.voted:has(input:checked){background:var(--color-success-highlight);border-color:var(--color-success);color:var(--color-success)}
+.when{display:flex;gap:var(--space-2);margin-top:var(--space-4);flex-wrap:wrap}
+.when legend{font-size:var(--text-sm);font-weight:700;color:var(--color-navy);margin-bottom:var(--space-1);width:100%}
+fieldset{border:0}
+.when label{flex:1;min-width:9rem}
+.when input{position:absolute;opacity:0}
+.when label span{display:block;text-align:center;padding:.65rem .5rem;border:1.5px solid var(--color-border);border-radius:var(--radius-md);font-weight:600;font-size:var(--text-sm);cursor:pointer;background:var(--color-bg)}
+.when input:checked+span{background:var(--color-navy);border-color:var(--color-navy);color:var(--color-cream)}
+.when input:focus-visible+span{outline:2px solid var(--color-gold);outline-offset:2px}
+.remove{font-size:var(--text-xs);color:var(--color-text-muted);text-decoration:underline;margin-top:var(--space-3)}
+.add{margin-top:var(--space-5)}
+.promise{font-family:var(--font-display);font-size:var(--text-lg);line-height:1.45;color:var(--color-navy)}
+.dates{background:var(--color-navy);color:var(--color-cream);border-radius:var(--radius-lg);padding:var(--space-5);margin-top:var(--space-6);display:grid;gap:var(--space-2)}
+.dates b{color:var(--color-gold-highlight)}
+.dates .closed{font-size:var(--text-sm);opacity:.8}
+.actions{display:grid;gap:var(--space-3);margin-top:var(--space-6)}
+.status{font-size:var(--text-sm);color:var(--color-success);min-height:1.5em;text-align:center}
+.small{font-size:var(--text-sm);color:var(--color-text-muted);text-align:center;margin-top:var(--space-4)}
+.small a{color:var(--color-navy)}
+.small button{text-decoration:underline;color:var(--color-text-muted);font-size:inherit}
+.pc-foot{text-align:center;font-size:var(--text-xs);color:var(--color-text-muted);padding:var(--space-6) var(--space-5) var(--space-10)}
+.pc-foot .disc{display:inline-block;border:1px solid var(--color-text-muted);padding:.3rem .6rem;margin-top:var(--space-3);font-weight:700;letter-spacing:.04em}
+@media print{
+ .pc-top{background:#fff;color:#000;padding:0 0 12px}.pc-top a.home,.privacy,.how,.actions,.add,.remove,.small,.status{display:none!important}
+ .pc-top h1,.card h2,.promise{color:#000}.pc-top .sub{color:#555}
+ .card{border:1px solid #999;margin-top:10px;padding:10px;break-inside:avoid}.card:first-child{margin-top:10px}
+ .f input[type=text]{border:0;border-bottom:1px solid #999;border-radius:0;padding:2px 0;background:none}
+ .when label span{padding:2px}.dates{background:#fff;color:#000;border:1px solid #999}.dates b{color:#000}
+ main.pc-main{padding:0}
+}
+</style>
+</head>
+<body class="pc">
+<header class="pc-top"><div class="pc-wrap">
+<a class="home" href="/">Pat Moore for Congress</a>
+<h1>Our Family Plan to Vote</h1>
+<p class="sub">We gave thanks together. We vote together.</p>
+<p class="how">Start it at Thanksgiving. Write down everyone in the family who can vote, pick a day, and settle the rides. Finish it on December 6 at the FAST Virtual House Party, then check off each person once they've voted.</p>
+<p class="privacy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span>Your plan saves on this phone as you type. Nothing is sent to the campaign.</span></p>
+</div></header>
+
+<main class="pc-main"><div class="pc-wrap" id="plan">
+<section class="card">
+ <div class="grid2">
+  <label class="f"><span>Family name</span><input type="text" data-k="family" autocomplete="family-name"></label>
+  <label class="f"><span>FAST Team host</span><input type="text" data-k="host" autocomplete="name"></label>
+ </div>
+</section>
+
+<section class="card">
+ <h2>Who's voting</h2>
+ <p class="hint">Everyone in the family who can vote. Add as many as you need.</p>
+ <div id="people"></div>
+ <button type="button" class="btn btn-outline btn-outline-navy btn-block add" id="add">Add a person</button>
+</section>
+
+<section class="card">
+ <h2>Saturday, December 12</h2>
+ <p class="hint">For anyone voting on Election Day.</p>
+ <label class="f"><span>Our polling place</span><input type="text" data-k="polling"></label>
+ <div class="grid2">
+  <label class="f"><span>We leave at</span><input type="text" data-k="leave" placeholder="9:00 a.m."></label>
+  <label class="f"><span>Backup time</span><input type="text" data-k="backup" placeholder="If plans change"></label>
+ </div>
+</section>
+
+<section class="card">
+ <h2>Our promise to each other</h2>
+ <p class="promise">Everyone on this plan votes. Nobody gets left without a ride. We check on each other until every name is checked.</p>
+ <div class="grid2">
+  <label class="f"><span>Signed</span><input type="text" data-k="sig1"></label>
+  <label class="f"><span>Signed</span><input type="text" data-k="sig2"></label>
+ </div>
+</section>
+
+<div class="dates">
+ <div><b>Early voting</b> Saturday, November 28 through Saturday, December 5</div>
+ <div class="closed">Closed Sunday, November 29</div>
+ <div><b>Election Day</b> Saturday, December 12. Pat Moore is #66 on your ballot.</div>
+</div>
+
+<div class="actions">
+ <button type="button" class="btn btn-gold btn-block" id="share" data-analytics-event="plan_card_share">Share our plan with the family</button>
+ <button type="button" class="btn btn-outline btn-outline-navy btn-block" id="print" data-analytics-event="plan_card_print">Print or save as PDF</button>
+ <p class="status" id="status" role="status"></p>
+</div>
+<p class="small">Prefer paper? <a href="/fast-family-plan-card.pdf" download>Download the printable card</a>. &nbsp; <button type="button" id="clear">Start over</button></p>
+</div></main>
+
+<footer class="pc-foot">Get More With Moore &middot; <a href="/">patmooreforcongress.com</a><br><span class="disc">Paid for by Pat Moore For Congress</span></footer>
+
+<template id="tpl">
+ <div class="person">
+  <div class="p-head">
+   <label class="f"><span>Name</span><input type="text" data-p="name"></label>
+   <label class="voted"><input type="checkbox" data-p="voted"> Voted</label>
+  </div>
+  <fieldset class="when"><legend>When</legend>
+   <label><input type="radio" value="early" data-p="when"><span>Early voting</span></label>
+   <label><input type="radio" value="dec12" data-p="when"><span>Saturday, Dec 12</span></label>
+  </fieldset>
+  <div class="grid2">
+   <label class="f"><span>Day and time</span><input type="text" data-p="day" placeholder="Sat, Nov 28, 10 a.m."></label>
+   <label class="f"><span>Driving or riding with</span><input type="text" data-p="ride"></label>
+  </div>
+  <button type="button" class="remove">Remove this person</button>
+ </div>
+</template>
+
+<script>
+(function(){
+ var KEY='pmfc-family-plan-v1', state={people:[{},{},{}]}, uid=0;
+ var peopleEl=document.getElementById('people'), statusEl=document.getElementById('status'), tpl=document.getElementById('tpl');
+ function load(){try{var s=localStorage.getItem(KEY); if(s){var o=JSON.parse(s); if(o&&o.people) state=o;}}catch(e){} if(!state.people.length) state.people=[{}];}
+ var t; function save(msg){try{localStorage.setItem(KEY,JSON.stringify(state)); flash(msg||'Saved on this phone');}catch(e){flash('Couldn\u2019t save on this phone. Use Share or Print to keep a copy.');}}
+ function flash(m){statusEl.textContent=m; clearTimeout(t); t=setTimeout(function(){statusEl.textContent='';},2500);}
+ function renderPeople(){
+  peopleEl.innerHTML='';
+  state.people.forEach(function(p,i){
+   var n=tpl.content.cloneNode(true), root=n.querySelector('.person'), g='when-'+(uid++);
+   root.querySelectorAll('[data-p]').forEach(function(el){
+    var k=el.dataset.p;
+    if(el.type==='radio'){el.name=g; el.checked=(p.when===el.value); el.addEventListener('change',function(){p.when=el.value; save();});}
+    else if(el.type==='checkbox'){el.checked=!!p.voted; el.addEventListener('change',function(){p.voted=el.checked; save(el.checked?'Checked off. One more vote counted.':'Saved on this phone');});}
+    else{el.value=p[k]||''; el.addEventListener('input',function(){p[k]=el.value; save();});}
+   });
+   var nm=root.querySelector('[data-p=name]'); nm.setAttribute('aria-label','Person '+(i+1)+' name');
+   root.querySelector('.remove').addEventListener('click',function(){state.people.splice(i,1); if(!state.people.length) state.people.push({}); save('Removed'); renderPeople();});
+   peopleEl.appendChild(n);
+  });
+ }
+ function bindTop(){document.querySelectorAll('[data-k]').forEach(function(el){var k=el.dataset.k; el.value=state[k]||''; el.addEventListener('input',function(){state[k]=el.value; save();});});}
+ function summary(){
+  var L=[], fam=(state.family||'').trim();
+  L.push((fam?fam+'\u2019s':'Our family\u2019s')+' plan to vote');
+  state.people.forEach(function(p){ if(!(p.name||'').trim()) return;
+   var w=p.when==='early'?'Early voting':p.when==='dec12'?'Sat, Dec 12':'Day TBD';
+   L.push('\u2022 '+p.name.trim()+': '+w+(p.day?', '+p.day:'')+(p.ride?' (ride: '+p.ride+')':'')+(p.voted?' \u2714 voted':''));});
+  if(state.polling) L.push('Polling place: '+state.polling+(state.leave?', leaving at '+state.leave:''));
+  L.push('Early voting thru Sat, Dec 5 (closed Sun, Nov 29). Election Day is Sat, Dec 12. Pat Moore is #66.');
+  L.push('Make your plan: https://patmooreforcongress.com/plan-card');
+  return L.join('\n');
+ }
+ document.getElementById('add').addEventListener('click',function(){state.people.push({}); save('Added'); renderPeople(); var a=peopleEl.querySelectorAll('[data-p=name]'); a[a.length-1].focus();});
+ document.getElementById('print').addEventListener('click',function(){window.print();});
+ document.getElementById('share').addEventListener('click',function(){
+  var txt=summary();
+  if(navigator.share){navigator.share({title:'Our Family Plan to Vote',text:txt}).catch(function(){});}
+  else if(navigator.clipboard){navigator.clipboard.writeText(txt).then(function(){flash('Copied. Paste it into your family group chat.');},function(){window.location.href='sms:?&body='+encodeURIComponent(txt);});}
+  else{window.location.href='sms:?&body='+encodeURIComponent(txt);}
+ });
+ document.getElementById('clear').addEventListener('click',function(){ if(!confirm('Start over? This clears the plan saved on this phone.')) return; try{localStorage.removeItem(KEY);}catch(e){} state={people:[{},{},{}]}; bindTop(); renderPeople(); flash('Cleared');});
+ load(); bindTop(); renderPeople();
+})();
+</script>
+</body>
+</html>

@@ -19,6 +19,16 @@
       "source": "/privacy-policy",
       "destination": "/privacy.html",
       "permanent": false
+    },
+    {
+      "source": "/plan-card",
+      "destination": "/plan-card.html",
+      "permanent": false
+    },
+    {
+      "source": "/plan",
+      "destination": "/plan-card.html",
+      "permanent": false
     }
   ],
   "headers": [
