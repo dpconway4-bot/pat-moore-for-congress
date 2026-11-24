@@ -184,7 +184,7 @@ fieldset{border:0}
    L.push('\u2022 '+p.name.trim()+': '+w+(p.day?', '+p.day:'')+(p.ride?' (ride: '+p.ride+')':'')+(p.voted?' \u2714 voted':''));});
   if(state.polling) L.push('Polling place: '+state.polling+(state.leave?', leaving at '+state.leave:''));
   L.push('Early voting thru Sat, Dec 5 (closed Sun, Nov 29). Election Day is Sat, Dec 12. Pat Moore is #66.');
-  L.push('Make your plan: https://patmooreforcongress.com/plan-card');
+  L.push('Make your plan: patmooreforcongress.com/plan');
   return L.join('\n');
  }
  document.getElementById('add').addEventListener('click',function(){state.people.push({}); save('Added'); renderPeople(); var a=peopleEl.querySelectorAll('[data-p=name]'); a[a.length-1].focus();});
