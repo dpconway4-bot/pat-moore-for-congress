@@ -29,6 +29,11 @@
       "source": "/plan",
       "destination": "/plan-card.html",
       "permanent": false
+    },
+    {
+      "source": "/media",
+      "destination": "/media.html",
+      "permanent": false
     }
   ],
   "headers": [
