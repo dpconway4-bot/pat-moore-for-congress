@@ -32,7 +32,12 @@
     },
     {
       "source": "/media",
-      "destination": "/media.html",
+      "destination": "/analysis.html",
+      "permanent": false
+    },
+    {
+      "source": "/analysis",
+      "destination": "/analysis.html",
       "permanent": false
     }
   ],
